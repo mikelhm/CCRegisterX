@@ -1,8 +1,10 @@
-package com.sk.myapplication;
+package com.sk.ccregisterx.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.sk.ccregisterx.R;
 
 
 public class MainActivity extends AppCompatActivity {

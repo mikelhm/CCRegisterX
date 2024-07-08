@@ -1,19 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://www.jitpack.io' }
         google()
         mavenCentral()
 
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'https://maven.aliyun.com/repository/google/' }
         maven { url 'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url 'https://download.flutter.io' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
 
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.4.0"
+
+//        classpath 'com.github.magicbaby810:CCRegisterX:-SNAPSHOT'
 
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 //        classpath 'com.github.magicbaby810:hannibal:1.0.7.3'
@@ -24,7 +25,7 @@ buildscript {
 
 allprojects {
     repositories {
-        maven { url 'https://jitpack.io' }
+        maven { url 'https://www.jitpack.io' }
         google()
         mavenCentral()
 
@@ -32,7 +33,6 @@ allprojects {
         maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'https://maven.aliyun.com/repository/google/' }
         maven { url 'https://maven.aliyun.com/repository/jcenter/' }
-        maven { url 'https://download.flutter.io' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
     }
 }
