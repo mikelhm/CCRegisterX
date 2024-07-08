@@ -13,6 +13,20 @@ dependencies {
     implementation 'com.android.tools.build:gradle:4.1.3'
 }
 
+task sourcesJar(type: Jar) {
+    from project.file('src/main/groovy')
+    archiveClassifier = 'sources'
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+}
+
+artifacts {
+    archives sourcesJar
+}
+
 //ext {
 //    bintrayRepo = 'android'
 //    bintrayName = 'cc-register'
