@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
 apply plugin: 'maven-publish'
+//apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     implementation gradleApi()
@@ -9,7 +10,11 @@ dependencies {
 repositories {
     mavenCentral()
 }
+[compileJava, compileTestJava, compileGroovy]*.options*.encoding = 'UTF-8'
+
 dependencies {
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation "commons-io:commons-io:2.13.0"
     implementation 'com.android.tools.build:gradle:7.4.0'
 }
 
@@ -25,6 +30,34 @@ tasks.withType(Javadoc) {
 
 artifacts {
     archives sourcesJar
+}
+
+//publish {
+//    userOrg = 'magicbaby'
+//    groupId = 'com.sk.ccregisterx'
+//    artifactId = 'ccregisterx'
+//    publishVersion = '0.0.1'
+//    desc = 'Android Commons Library'
+//    website = "https://github.com/magicbaby810/CCRegisterX"
+//}
+
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.sk.ccregisterx'
+            artifactId = 'ccregisterx'
+            version = '0.0.1'
+            artifact 'build/aar/cc-register-x.aar'
+        }
+
+    }
+
+    repositories {
+        maven {
+            url uri('../local_repo')
+        }
+    }
 }
 
 //ext {

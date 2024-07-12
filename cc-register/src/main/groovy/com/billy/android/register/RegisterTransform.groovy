@@ -8,12 +8,12 @@ import com.billy.android.register.cc.generator.ProviderGenerator
 import com.billy.android.register.cc.generator.RegistryCodeGenerator
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.FileUtils
 import org.apache.tools.ant.taskdefs.Transform
 import org.gradle.api.Project
 import org.gradle.internal.impldep.com.google.gson.Gson
 import org.gradle.internal.impldep.com.google.gson.reflect.TypeToken
+import org.gradle.internal.impldep.org.apache.commons.codec.digest.DigestUtils
 
 /**
  * 自动注册的核心类
@@ -24,28 +24,25 @@ class RegisterTransform extends Transform {
     static final String PLUGIN_NAME = RegisterPlugin.PLUGIN_NAME
 
 
-    Project project
+    Project getP
     RegisterExtension extension;
     def cacheEnabled
     def isAllScan = false
     Map<String, ScanHarvest> cacheMap = null
 
     RegisterTransform(Project project) {
-        this.project = project
+        this.getP = project
     }
 
 
-    @Override
     String getName() {
         return PLUGIN_NAME
     }
 
-    @Override
     Set<QualifiedContent.ContentType> getInputTypes() {
         return TransformManager.CONTENT_CLASS
     }
 
-    @Override
     Set<QualifiedContent.Scope> getScopes() {
         return TransformManager.SCOPE_FULL_PROJECT
     }
@@ -54,20 +51,18 @@ class RegisterTransform extends Transform {
      * 是否支持增量编译
      * @return
      */
-    @Override
     boolean isIncremental() {
         return true
     }
     def classFolder = null
 
-    @Override
     void transform(Context context, Collection<TransformInput> inputs
                    , Collection<TransformInput> referencedInputs
                    , TransformOutputProvider outputProvider
                    , boolean isIncremental) throws IOException, TransformException, InterruptedException {
-        project.logger.warn("start ${PLUGIN_NAME} transform...")
+        getP.logger.warn("start ${PLUGIN_NAME} transform...")
         extension.reset()
-        project.logger.warn(extension.toString())
+        getP.logger.warn(extension.toString())
         def clearCache = !isIncremental
         // clean build cache
         if (clearCache) {
@@ -80,7 +75,7 @@ class RegisterTransform extends Transform {
         cacheEnabled = extension.cacheEnabled
         int asmApiLevel = CodeScanner.getAsmApiLevel()
         println("${PLUGIN_NAME}----------- work environment ----------------\n" )
-        println(">>>> gradle version: ${project.gradle.gradleVersion}")
+        println(">>>> gradle version: ${getP.gradle.gradleVersion}")
         println(">>>> gradle plugin version:${Version.ANDROID_GRADLE_PLUGIN_VERSION}")
         println(">>>> current ASM level: ASM${(asmApiLevel >> 16)}")
         println("\n${PLUGIN_NAME}-----------isIncremental:${isIncremental}--------extension.cacheEnabled:${cacheEnabled}--------------------\n")
@@ -91,7 +86,7 @@ class RegisterTransform extends Transform {
 
         if (cacheEnabled) { //开启了缓存
             gson = new Gson()
-            cacheFile = RegisterCache.getRegisterCacheFile(project)
+            cacheFile = RegisterCache.getRegisterCacheFile(getP)
             if (clearCache && cacheFile.exists())
                 cacheFile.delete()
             cacheMap = RegisterCache.readToMap(cacheFile, new TypeToken<HashMap<String, ScanHarvest>>() {
@@ -128,14 +123,14 @@ class RegisterTransform extends Transform {
         }
 
         def scanFinishTime = System.currentTimeMillis()
-        project.logger.error("${PLUGIN_NAME} scan all class cost time: " + (scanFinishTime - time) + " ms")
+        getP.logger.error("${PLUGIN_NAME} scan all class cost time: " + (scanFinishTime - time) + " ms")
 
         extension.list.each { ext ->
             if (ext.fileContainsInitClass) {
                 println('')
                 println("insert register code to file:" + ext.fileContainsInitClass.absolutePath)
                 if (ext.classList.isEmpty()) {
-                    project.logger.error("No class implements found for interface:" + ext.interfaceName)
+                    getP.logger.error("No class implements found for interface:" + ext.interfaceName)
                 } else {
                     ext.classList.each {
                         println(it)
@@ -143,12 +138,12 @@ class RegisterTransform extends Transform {
                     RegistryCodeGenerator.insertInitCodeTo(ext)
                 }
             } else {
-                project.logger.error("The specified register class not found:" + ext.registerClassName)
+                getP.logger.error("The specified register class not found:" + ext.registerClassName)
             }
         }
-        project.logger.error("${PLUGIN_NAME} insert code cost time: " + (System.currentTimeMillis() - scanFinishTime) + " ms")
+        getP.logger.error("${PLUGIN_NAME} insert code cost time: " + (System.currentTimeMillis() - scanFinishTime) + " ms")
         if (extension.multiProcessEnabled && classFolder) {
-            def processNames = ManifestGenerator.getCachedProcessNames(project.name, context.variantName)
+            def processNames = ManifestGenerator.getCachedProcessNames(getP.name, context.variantName)
             processNames.each { processName ->
                 if (processName) {
                     ProviderGenerator.generateProvider(processName, classFolder)
@@ -156,7 +151,7 @@ class RegisterTransform extends Transform {
             }
         }
         def finishTime = System.currentTimeMillis()
-        project.logger.error("${PLUGIN_NAME} cost time: " + (finishTime - time) + " ms")
+        getP.logger.error("${PLUGIN_NAME} cost time: " + (finishTime - time) + " ms")
     }
 
     static void scanJar(JarInput jarInput, TransformOutputProvider outputProvider, CodeScanner scanProcessor) {
