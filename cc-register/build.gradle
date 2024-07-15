@@ -28,10 +28,6 @@ tasks.withType(Javadoc) {
     options.addStringOption('encoding', 'UTF-8')
 }
 
-artifacts {
-    archives sourcesJar
-}
-
 //publish {
 //    userOrg = 'magicbaby'
 //    groupId = 'com.sk.ccregisterx'
@@ -48,7 +44,12 @@ publishing {
             groupId = 'com.sk.ccregisterx'
             artifactId = 'ccregisterx'
             version = '0.0.1'
-            artifact 'build/aar/cc-register-x.aar'
+//            artifact sourcesJar
+
+            // 必须有这个 否则不会上传AAR包  将bundleReleaseAar任务的单个输出文件作为发布的AAR文件。这样，该AAR文件就会成为 MavenPublication 的 artifact 并进行发布
+//            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
+
+            from components.java
         }
 
     }
