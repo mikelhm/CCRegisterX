@@ -77,7 +77,7 @@ class RegisterCache {
     }
 
     private static String getCacheFileDir(Project project) {
-        return project.getBuildDir().absolutePath + File.separator + AndroidProject.FD_OUTPUTS + File.separator + CACHE_INFO_DIR + File.separator
+        return project.getBuildDir().absolutePath + File.separator + "outputs" + File.separator + CACHE_INFO_DIR + File.separator
     }
 
     /**
