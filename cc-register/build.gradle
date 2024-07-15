@@ -8,7 +8,10 @@ dependencies {
 }
 
 repositories {
+    google()
+    jcenter()
     mavenCentral()
+    maven {url 'https://maven.aliyun.com/nexus/content/groups/public/'}
 }
 [compileJava, compileTestJava, compileGroovy]*.options*.encoding = 'UTF-8'
 
