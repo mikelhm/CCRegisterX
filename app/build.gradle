@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 //apply plugin: 'cc-register'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.sk.ccregisterx"
         minSdkVersion 19
-        targetSdkVersion 28
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
