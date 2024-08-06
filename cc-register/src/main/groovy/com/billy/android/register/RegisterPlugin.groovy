@@ -23,8 +23,8 @@ public class RegisterPlugin implements Plugin<Project> {
         def isApp = ProjectModuleManager.manageModule(project)
         performBuildTypeCache(project, isApp)
         if (isApp) {
-            println "project(${project.name}) register ${PLUGIN_NAME} transform"
             def android = project.extensions.getByType(AppExtension)
+            println "project(${project.name}) register ${PLUGIN_NAME} transform ${android} extensions ${project.extensions}"
             def transformImpl = new RegisterTransform(project)
             android.registerTransform(transformImpl)
             project.afterEvaluate {
