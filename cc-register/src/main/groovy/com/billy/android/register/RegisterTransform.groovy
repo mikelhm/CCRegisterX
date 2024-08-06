@@ -9,7 +9,6 @@ import com.billy.android.register.cc.generator.RegistryCodeGenerator
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.apache.commons.io.FileUtils
-import org.apache.tools.ant.taskdefs.Transform
 import org.gradle.api.Project
 import org.gradle.internal.impldep.com.google.gson.Gson
 import org.gradle.internal.impldep.com.google.gson.reflect.TypeToken
