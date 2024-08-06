@@ -23,10 +23,10 @@ repositories {
 }
 
 
-//task sourcesJar(type: Jar) {
-//    from project.file('src/main/groovy')
-//    archiveClassifier = 'sources'
-//}
+task sourcesJar(type: Jar) {
+    from project.file('src/main/groovy')
+    archiveClassifier = 'sources'
+}
 
 
 //publish {
