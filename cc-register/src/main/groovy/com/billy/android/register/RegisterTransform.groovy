@@ -8,11 +8,9 @@ import com.billy.android.register.cc.generator.ProviderGenerator
 import com.billy.android.register.cc.generator.RegistryCodeGenerator
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import org.apache.commons.codec.digest.DigestUtils
 import org.apache.commons.io.FileUtils
 import org.gradle.api.Project
-import org.gradle.internal.impldep.com.google.gson.Gson
-import org.gradle.internal.impldep.com.google.gson.reflect.TypeToken
-import org.gradle.internal.impldep.org.apache.commons.codec.digest.DigestUtils
 
 /**
  * 自动注册的核心类
