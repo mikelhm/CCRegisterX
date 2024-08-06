@@ -1,10 +1,7 @@
 package com.billy.android.register.cc.generator
 
 import com.billy.android.register.RegisterInfo
-import org.gradle.internal.impldep.org.objectweb.asm.ClassReader
-import org.gradle.internal.impldep.org.objectweb.asm.ClassVisitor
-import org.gradle.internal.impldep.org.objectweb.asm.ClassWriter
-import org.gradle.internal.impldep.org.objectweb.asm.MethodVisitor
+import org.apache.commons.io.IOUtils
 import org.objectweb.asm.*
 
 import java.util.jar.JarEntry

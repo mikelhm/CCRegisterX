@@ -1,9 +1,6 @@
 package com.billy.android.register.cc.generator
 
 import com.billy.android.register.RegisterTransform
-import org.gradle.internal.impldep.com.esotericsoftware.reflectasm.shaded.org.objectweb.asm.ClassWriter
-import org.gradle.internal.impldep.org.objectweb.asm.MethodVisitor
-import org.gradle.internal.impldep.org.objectweb.asm.Opcodes
 import org.objectweb.asm.*
 
 /**
