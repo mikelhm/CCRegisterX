@@ -30,7 +30,7 @@ public class RegisterPlugin implements Plugin<Project> {
             }
             println "project(${project.name}) register ${PLUGIN_NAME} transform ${android} extensions ${project.extensions.extraProperties}"
             def transformImpl = new RegisterTransform(project)
-            android.registerTransform(transformImpl)
+            android.registerTransform(transformImpl, Object[])
             project.afterEvaluate {
                 RegisterExtension config = init(project, transformImpl)//此处要先于transformImpl.transform方法执行
                 if (config.multiProcessEnabled) {
