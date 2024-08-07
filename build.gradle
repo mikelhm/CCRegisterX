@@ -16,8 +16,8 @@ buildscript {
         classpath "com.android.tools.build:gradle:4.1.3"
 
         classpath 'com.novoda:bintray-release:0.9.1'
-//        classpath 'com.github.magicbaby810:CCRegisterX:0.0.94'
-        classpath 'com.sk.ccregisterx:ccregisterx:0.0.1'
+        classpath 'com.github.magicbaby810:CCRegisterX:0.1.2'
+//        classpath 'com.sk.ccregisterx:ccregisterx:0.0.1'
 
 //        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 //        classpath 'com.github.magicbaby810:hannibal:1.0.7.3'
