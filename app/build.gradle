@@ -44,7 +44,7 @@ dependencies {
 
 
 
-//ccregister {
-//
-//    excludeJarNames = [ 'bcprov-jdk15on-1.69.jar' ]
-//}
+ccregister {
+
+    excludeJarNames = [ 'bcprov-jdk15on-1.69.jar' ]
+}
