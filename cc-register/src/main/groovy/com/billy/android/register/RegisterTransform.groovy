@@ -105,9 +105,13 @@ class RegisterTransform extends Transform {
                 }
 
                 ArrayList<String> excludeJars = extension.excludeJarNames
-                excludeJars.each { excludeJar ->
-                    if (!jarInput.file.absolutePath.contains(excludeJar.trim())) {
-                        scanJar(jarInput, outputProvider, scanProcessor)
+                if (excludeJars.size() == 0) {
+                    scanJar(jarInput, outputProvider, scanProcessor)
+                } else {
+                    excludeJars.each { excludeJar ->
+                        if (!jarInput.file.absolutePath.contains(excludeJar.trim())) {
+                            scanJar(jarInput, outputProvider, scanProcessor)
+                        }
                     }
                 }
 //                scanJar(jarInput, outputProvider, scanProcessor)

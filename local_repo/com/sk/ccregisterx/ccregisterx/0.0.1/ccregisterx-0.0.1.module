@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.5",
-      "buildId": "nmr23fuhdrd3ngjc3oyrxc2io4"
+      "buildId": "k7vfddp6xjcy3cshkjsnsmxtaa"
     }
   },
   "variants": [
@@ -28,11 +28,11 @@
         {
           "name": "ccregisterx-0.0.1.jar",
           "url": "ccregisterx-0.0.1.jar",
-          "size": 149599,
-          "sha512": "4bf6c8a221f98991f3377b6626c593939bd8882978ac4f9522eac70a2a74d4d9c4028b5f341dbd3208455a961acf3fc7e5f26e9510ad5410340d47d2ce1ce8ca",
-          "sha256": "ba1c9ea5745adf678e772ae38435e51d655051a899ecbc6c2e6ef8f346c77d1d",
-          "sha1": "0f4b336d5d1a9d56ab79ff28ea696f579dfea442",
-          "md5": "3c9e43f26160a4a9166deb787d93a092"
+          "size": 149808,
+          "sha512": "54942b5d6104cc7e3a0afcba91a1fe11b5b36e11a2a1fc33b2628f0f09df38219dd535933b374cfd8d8e7584a081746067d76d3bf905f24ae80e5252b0d4f918",
+          "sha256": "a491f56f3df7d6c559281d19b69caf3dfa1c20b8f160f35bcfcfba0938010089",
+          "sha1": "387ccbc78f485adb21088e6caa376a07c21ac3d6",
+          "md5": "a967aea4abf3c571bd8082535e539688"
         }
       ]
     },
@@ -72,11 +72,11 @@
         {
           "name": "ccregisterx-0.0.1.jar",
           "url": "ccregisterx-0.0.1.jar",
-          "size": 149599,
-          "sha512": "4bf6c8a221f98991f3377b6626c593939bd8882978ac4f9522eac70a2a74d4d9c4028b5f341dbd3208455a961acf3fc7e5f26e9510ad5410340d47d2ce1ce8ca",
-          "sha256": "ba1c9ea5745adf678e772ae38435e51d655051a899ecbc6c2e6ef8f346c77d1d",
-          "sha1": "0f4b336d5d1a9d56ab79ff28ea696f579dfea442",
-          "md5": "3c9e43f26160a4a9166deb787d93a092"
+          "size": 149808,
+          "sha512": "54942b5d6104cc7e3a0afcba91a1fe11b5b36e11a2a1fc33b2628f0f09df38219dd535933b374cfd8d8e7584a081746067d76d3bf905f24ae80e5252b0d4f918",
+          "sha256": "a491f56f3df7d6c559281d19b69caf3dfa1c20b8f160f35bcfcfba0938010089",
+          "sha1": "387ccbc78f485adb21088e6caa376a07c21ac3d6",
+          "md5": "a967aea4abf3c571bd8082535e539688"
         }
       ]
     }

@@ -1,6 +1,6 @@
 ext.mainApp = true
 apply plugin: 'com.android.application'
-//apply plugin: 'cc-register'
+apply plugin: 'cc-register'
 
 android {
     compileSdkVersion 33
