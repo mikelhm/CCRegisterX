@@ -1,3 +1,4 @@
+ext.mainApp = true
 apply plugin: 'com.android.application'
 //apply plugin: 'cc-register'
 
@@ -35,17 +36,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-
-
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.69'
+    implementation 'com.google.code.gson:gson:2.10.1'
 //    implementation 'com.sk.flutterpatch:flutterpatch:0.0.7'
 
 }
 
 
-//import com.hannibal.gradle.utils.*
-//import org.objectweb.asm.*
+
+//ccregister {
 //
-//hannibal {
-//
-//    printLog = true
+//    excludeJarNames = [ 'bcprov-jdk15on-1.69.jar' ]
 //}

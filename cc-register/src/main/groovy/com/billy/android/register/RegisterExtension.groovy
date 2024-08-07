@@ -19,6 +19,7 @@ class RegisterExtension {
     def cacheEnabled = true
     def multiProcessEnabled = false
     ArrayList<String> excludeProcessNames = []
+    ArrayList<String> excludeJarNames = []
 
     RegisterExtension() {}
 

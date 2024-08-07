@@ -93,9 +93,9 @@ class RegisterTransform extends Transform {
                 isAllScan = true
             }
         }
-
         CodeScanner scanProcessor = new CodeScanner(extension.list, cacheMap)
 
+        println "exclude jar = ${extension.excludeJarNames}"
         // 遍历输入文件
         inputs.each { TransformInput input ->
             // 遍历jar
@@ -103,7 +103,14 @@ class RegisterTransform extends Transform {
                 if (jarInput.status != Status.NOTCHANGED && cacheMap) {
                     cacheMap.remove(jarInput.file.absolutePath)
                 }
-                scanJar(jarInput, outputProvider, scanProcessor)
+
+                ArrayList<String> excludeJars = extension.excludeJarNames
+                excludeJars.each { excludeJar ->
+                    if (!jarInput.file.absolutePath.contains(excludeJar.trim())) {
+                        scanJar(jarInput, outputProvider, scanProcessor)
+                    }
+                }
+//                scanJar(jarInput, outputProvider, scanProcessor)
             }
             // 遍历目录
             input.directoryInputs.each { DirectoryInput directoryInput ->
