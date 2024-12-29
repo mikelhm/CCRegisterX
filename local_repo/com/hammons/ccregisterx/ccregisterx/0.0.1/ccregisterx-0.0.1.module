@@ -1,0 +1,84 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.hammons.ccregisterx",
+    "module": "ccregisterx",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "5wl7vhohwrh7zhs2vx4yu3mi74"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "ccregisterx-0.0.1.jar",
+          "url": "ccregisterx-0.0.1.jar",
+          "size": 149808,
+          "sha512": "b9b65b8122847117f51d4fc47a507b9116588ff8146c580d3a49f37ad23502afad4a2820cf3aae7d262a0d0c6a58276578c90a8de98ce76d98b81491bbf35f12",
+          "sha256": "67d5d82a755fdd2ba8063861d4aad9f13afe1ba6e405a147a8f0a4ed66b380eb",
+          "sha1": "1498fa1c739f56daa78fd86aa0294764bc7ba261",
+          "md5": "ae9663b1ed359394cbbd44b9653d0a16"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.google.code.gson",
+          "module": "gson",
+          "version": {
+            "requires": "2.10.1"
+          }
+        },
+        {
+          "group": "commons-io",
+          "module": "commons-io",
+          "version": {
+            "requires": "2.13.0"
+          }
+        },
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "4.1.3"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "ccregisterx-0.0.1.jar",
+          "url": "ccregisterx-0.0.1.jar",
+          "size": 149808,
+          "sha512": "b9b65b8122847117f51d4fc47a507b9116588ff8146c580d3a49f37ad23502afad4a2820cf3aae7d262a0d0c6a58276578c90a8de98ce76d98b81491bbf35f12",
+          "sha256": "67d5d82a755fdd2ba8063861d4aad9f13afe1ba6e405a147a8f0a4ed66b380eb",
+          "sha1": "1498fa1c739f56daa78fd86aa0294764bc7ba261",
+          "md5": "ae9663b1ed359394cbbd44b9653d0a16"
+        }
+      ]
+    }
+  ]
+}

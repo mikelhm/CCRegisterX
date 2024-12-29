@@ -42,10 +42,10 @@ task sourcesJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            groupId = 'com.sk.ccregisterx'
+            groupId = 'com.hammons.ccregisterx'
             artifactId = 'ccregisterx'
             version = '0.0.1'
-//            artifact sourcesJar
+            artifact sourcesJar
 
             // 必须有这个 否则不会上传AAR包  将bundleReleaseAar任务的单个输出文件作为发布的AAR文件。这样，该AAR文件就会成为 MavenPublication 的 artifact 并进行发布
 //            afterEvaluate { artifact(tasks.getByName("bundleReleaseAar")) }
